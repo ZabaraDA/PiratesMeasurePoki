@@ -1,0 +1,12 @@
+# ninja log v5
+19	168	7705393326610295	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	2b978e0ddedbe194
+168	243	7705393327269639	G:/Unity Project/Pirate Measures Poki/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/475u4z22/obj/arm64-v8a/libswappywrapper.so	245ffb7bc3c2ccb8
+7	832	7705393333218178	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	7c72f6e0a69a6580
+14	885	7705393333569234	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	ee91f6a22d39fdb0
+5	898	7705393333730085	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	3d110960c02c5e59
+9	899	7705393333735195	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	6ad43b38208751ea
+3	922	7705393334134303	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	9ce61d1d9291dacf
+16	950	7705393334424935	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	acb7a4be4ddefa0f
+12	1068	7705393335614583	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	6fbc1e6f52d368b5
+1	1139	7705393336284877	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	7f369420f3ba1b30
+1139	1207	7705393336999934	G:/Unity Project/Pirate Measures Poki/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/475u4z22/obj/arm64-v8a/libgame.so	d7c330b534c78af1
