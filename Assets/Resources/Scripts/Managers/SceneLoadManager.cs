@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SwitchSceneScript : MonoBehaviour
+public class SceneLoadManager : MonoBehaviour
 {
     public void SceneLoad(int numberScene)
     {
