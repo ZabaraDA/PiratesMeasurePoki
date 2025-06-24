@@ -1559,6 +1559,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SceneLoad
       objectReference: {fileID: 0}
+    - target: {fileID: 6236399569466156772, guid: a5f8747d0de4df7488df438be194388a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3992,6 +3996,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763892546}
   m_CullTransparentMesh: 1
+--- !u!1 &1777070742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1777070744}
+  - component: {fileID: 1777070743}
+  m_Layer: 0
+  m_Name: Screen Rotation Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1777070743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777070742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9109942b34e08784694a04026a63ddb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _allowPortraitOrientation: 0
+  _allowPortraitUpsideDownOrientation: 0
+  _allowLandscapeLeftOrientation: 1
+  _allowPortraitLandscapeRightOrientation: 1
+--- !u!4 &1777070744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777070742}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 750.11285, y: 627.48126, z: -8.740239}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1796428129 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6226865740478256578, guid: a5f8747d0de4df7488df438be194388a, type: 3}
@@ -4622,3 +4674,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1724972776}
   - {fileID: 1132621514}
+  - {fileID: 1777070744}
