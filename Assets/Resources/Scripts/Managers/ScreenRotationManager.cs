@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 
 /// <summary>
-/// Скрипт пределяет ориентацию экрана в приложении
+/// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 /// </summary>
 public class ScreenRotationScript : MonoBehaviour
 {
@@ -30,6 +30,16 @@ public class ScreenRotationScript : MonoBehaviour
         {
             Screen.orientation = ScreenOrientation.AutoRotation;
             return;
+        }
+
+        if (_allowPortraitOrientation || _allowPortraitUpsideDownOrientation) 
+        {
+            Screen.orientation = ScreenOrientation.Portrait;
+        }
+
+        if (_allowLandscapeLeftOrientation || _allowPortraitLandscapeRightOrientation)
+        {
+            Screen.orientation = ScreenOrientation.LandscapeLeft;
         }
 
         Screen.autorotateToPortrait = _allowPortraitOrientation;

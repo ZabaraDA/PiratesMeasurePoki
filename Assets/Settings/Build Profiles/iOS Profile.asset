@@ -10,18 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 15003, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: First Profile
+  m_Name: iOS Profile
   m_EditorClassIdentifier: 
   m_AssetVersion: 1
-  m_BuildTarget: 13
+  m_BuildTarget: 9
   m_Subtarget: 0
-  m_PlatformId: b9b35072a6f44c2e863f17467ea3dc13
+  m_PlatformId: ad48d16a66894befa4d8181998c3cb09
   m_PlatformBuildProfile:
-    rid: 7980868970516054017
+    rid: 3251970039990976585
   m_OverrideGlobalSceneList: 0
-  m_Scenes:
-  - m_enabled: 1
-    m_path: Assets/Scenes/Menu Scene.unity
+  m_Scenes: []
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings:
@@ -166,9 +164,7 @@ MonoBehaviour:
     - line: '|   visionOSBundleVersion: 1.0'
     - line: '|   tvOSBundleVersion: 1.0'
     - line: '|   bundleVersion: 1.0.0'
-    - line: '|   preloadedAssets:'
-    - line: '|   - {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100,
-        type: 3}'
+    - line: '|   preloadedAssets: []'
     - line: '|   metroInputSource: 0'
     - line: '|   wsaTransparentSwapchain: 0'
     - line: '|   m_HolographicPauseOnTrackingLoss: 1'
@@ -190,12 +186,12 @@ MonoBehaviour:
     - line: '|   androidMaxAspectRatio: 2.4'
     - line: '|   androidMinAspectRatio: 1'
     - line: '|   applicationIdentifier:'
-    - line: '|     Android: com.prtmsrspk'
     - line: '|     Standalone: com.DefaultCompany.2D-URP'
+    - line: '|     iPhone: com.prtmsrspk'
     - line: '|   buildNumber:'
     - line: '|     Standalone: 0'
     - line: '|     VisionOS: 0'
-    - line: '|     iPhone: 0'
+    - line: '|     iPhone: 1'
     - line: '|     tvOS: 0'
     - line: '|   overrideDefaultApplicationIdentifier: 1'
     - line: '|   AndroidBundleVersionCode: 1'
@@ -292,8 +288,8 @@ MonoBehaviour:
     - line: '|   AndroidTargetArchitectures: 2'
     - line: '|   AndroidSplashScreenScale: 0'
     - line: '|   androidSplashScreen: {instanceID: 0}'
-    - line: '|   AndroidKeystoreName: ''{inproject}: prtmsrspk.keystore'''
-    - line: '|   AndroidKeyaliasName: com.prtmsrspk'
+    - line: '|   AndroidKeystoreName: '
+    - line: '|   AndroidKeyaliasName: '
     - line: '|   AndroidEnableArmv9SecurityFeatures: 0'
     - line: '|   AndroidEnableArm64MTE: 0'
     - line: '|   AndroidBuildApkPerCpuArchitecture: 0'
@@ -302,7 +298,7 @@ MonoBehaviour:
     - line: '|   AndroidEnableTango: 0'
     - line: '|   androidEnableBanner: 1'
     - line: '|   androidUseLowAccuracyLocation: 0'
-    - line: '|   androidUseCustomKeystore: 1'
+    - line: '|   androidUseCustomKeystore: 0'
     - line: '|   m_AndroidBanners:'
     - line: '|   - width: 320'
     - line: '|     height: 180'
@@ -416,8 +412,108 @@ MonoBehaviour:
     - line: '|       m_Height: 36'
     - line: '|       m_Kind: 0'
     - line: '|       m_SubKind: '
+    - line: '|   - m_BuildTarget: iPhone'
+    - line: '|     m_Icons:'
+    - line: '|     - m_Textures: []'
+    - line: '|       m_Width: 180'
+    - line: '|       m_Height: 180'
+    - line: '|       m_Kind: 0'
+    - line: '|       m_SubKind: iPhone'
+    - line: '|     - m_Textures: []'
+    - line: '|       m_Width: 120'
+    - line: '|       m_Height: 120'
+    - line: '|       m_Kind: 0'
+    - line: '|       m_SubKind: iPhone'
+    - line: '|     - m_Textures: []'
+    - line: '|       m_Width: 167'
+    - line: '|       m_Height: 167'
+    - line: '|       m_Kind: 0'
+    - line: '|       m_SubKind: iPad'
+    - line: '|     - m_Textures: []'
+    - line: '|       m_Width: 152'
+    - line: '|       m_Height: 152'
+    - line: '|       m_Kind: 0'
+    - line: '|       m_SubKind: iPad'
+    - line: '|     - m_Textures: []'
+    - line: '|       m_Width: 76'
+    - line: '|       m_Height: 76'
+    - line: '|       m_Kind: 0'
+    - line: '|       m_SubKind: iPad'
+    - line: '|     - m_Textures: []'
+    - line: '|       m_Width: 120'
+    - line: '|       m_Height: 120'
+    - line: '|       m_Kind: 3'
+    - line: '|       m_SubKind: iPhone'
+    - line: '|     - m_Textures: []'
+    - line: '|       m_Width: 80'
+    - line: '|       m_Height: 80'
+    - line: '|       m_Kind: 3'
+    - line: '|       m_SubKind: iPhone'
+    - line: '|     - m_Textures: []'
+    - line: '|       m_Width: 80'
+    - line: '|       m_Height: 80'
+    - line: '|       m_Kind: 3'
+    - line: '|       m_SubKind: iPad'
+    - line: '|     - m_Textures: []'
+    - line: '|       m_Width: 40'
+    - line: '|       m_Height: 40'
+    - line: '|       m_Kind: 3'
+    - line: '|       m_SubKind: iPad'
+    - line: '|     - m_Textures: []'
+    - line: '|       m_Width: 87'
+    - line: '|       m_Height: 87'
+    - line: '|       m_Kind: 1'
+    - line: '|       m_SubKind: iPhone'
+    - line: '|     - m_Textures: []'
+    - line: '|       m_Width: 58'
+    - line: '|       m_Height: 58'
+    - line: '|       m_Kind: 1'
+    - line: '|       m_SubKind: iPhone'
+    - line: '|     - m_Textures: []'
+    - line: '|       m_Width: 29'
+    - line: '|       m_Height: 29'
+    - line: '|       m_Kind: 1'
+    - line: '|       m_SubKind: iPhone'
+    - line: '|     - m_Textures: []'
+    - line: '|       m_Width: 58'
+    - line: '|       m_Height: 58'
+    - line: '|       m_Kind: 1'
+    - line: '|       m_SubKind: iPad'
+    - line: '|     - m_Textures: []'
+    - line: '|       m_Width: 29'
+    - line: '|       m_Height: 29'
+    - line: '|       m_Kind: 1'
+    - line: '|       m_SubKind: iPad'
+    - line: '|     - m_Textures: []'
+    - line: '|       m_Width: 60'
+    - line: '|       m_Height: 60'
+    - line: '|       m_Kind: 2'
+    - line: '|       m_SubKind: iPhone'
+    - line: '|     - m_Textures: []'
+    - line: '|       m_Width: 40'
+    - line: '|       m_Height: 40'
+    - line: '|       m_Kind: 2'
+    - line: '|       m_SubKind: iPhone'
+    - line: '|     - m_Textures: []'
+    - line: '|       m_Width: 40'
+    - line: '|       m_Height: 40'
+    - line: '|       m_Kind: 2'
+    - line: '|       m_SubKind: iPad'
+    - line: '|     - m_Textures: []'
+    - line: '|       m_Width: 20'
+    - line: '|       m_Height: 20'
+    - line: '|       m_Kind: 2'
+    - line: '|       m_SubKind: iPad'
+    - line: '|     - m_Textures: []'
+    - line: '|       m_Width: 1024'
+    - line: '|       m_Height: 1024'
+    - line: '|       m_Kind: 4'
+    - line: '|       m_SubKind: App Store'
     - line: '|   m_BuildTargetBatching:'
     - line: '|   - m_BuildTarget: Android'
+    - line: '|     m_StaticBatching: 1'
+    - line: '|     m_DynamicBatching: 0'
+    - line: '|   - m_BuildTarget: iPhone'
     - line: '|     m_StaticBatching: 1'
     - line: '|     m_DynamicBatching: 0'
     - line: '|   m_BuildTargetShaderSettings: []'
@@ -442,8 +538,8 @@ MonoBehaviour:
     - line: '|   m_BuildTargetNormalMapEncoding: []'
     - line: '|   m_BuildTargetDefaultTextureCompressionFormat:'
     - line: '|   - serializedVersion: 3'
-    - line: '|     m_BuildTarget: Android'
-    - line: '|     m_Formats: 01000000'
+    - line: '|     m_BuildTarget: iOS'
+    - line: '|     m_Formats: 03000000'
     - line: '|   playModeTestRunnerEnabled: 0'
     - line: '|   runPlayModeTestAsEditModeTest: 0'
     - line: '|   actionOnDotNetUnhandledException: 1'
@@ -828,8 +924,8 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 7980868970516054017
-      type: {class: AndroidPlatformBuildSettings, ns: UnityEditor.Android, asm: UnityEditor.Android.Extensions}
+    - rid: 3251970039990976585
+      type: {class: iOSPlatformSettings, ns: UnityEditor.iOS, asm: UnityEditor.iOS.Extensions}
       data:
         m_Development: 0
         m_ConnectProfiler: 0
@@ -840,35 +936,9 @@ MonoBehaviour:
         m_ExplicitNullChecks: 0
         m_ExplicitDivideByZeroChecks: 0
         m_ExplicitArrayBoundsChecks: 0
-        m_CompressionType: 2
+        m_CompressionType: 0
         m_InstallInBuildFolder: 0
-        m_BuildSubtarget: 0
-        m_BuildSystem: 1
-        m_ExportAsGoogleAndroidProject: 0
-        m_DebugSymbolLevel: 1
-        m_DebugSymbolFormat: 5
-        m_CurrentDeploymentTargetId: __builtin__target_default
-        m_BuildType: 2
-        m_BuildAppBundle: 1
-        m_IPAddressToConnect: 
+        m_iOSXcodeBuildConfig: 1
         m_SymlinkSources: 0
---- !u!114 &7614190746727788843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 15012, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: BuildAutomationSettings
-  m_EditorClassIdentifier: 
-  m_OperatingSystemValue: 
-  m_OperatingSystemFamily: 
-  m_XcodeVersion: 
-  m_AndroidSdkVersion: 
-  m_UnityArchitecture: 
-  m_MachineTypeId: 
-  m_CredentialsId: 
-  m_BuildTarget: 13
+        m_PreferredXcode: 
+        m_SymlinkTrampoline: 0

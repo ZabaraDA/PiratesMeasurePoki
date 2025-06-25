@@ -1,0 +1,23 @@
+# ninja log v5
+26	5499	7725418545922004	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	b504f976bf4f0905
+103	1301	7725418503140607	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	6470f011d204d7e
+75	5014	7725418540834683	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	4c53b7e8a554256
+15	4478	7725418534865129	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	9c9a9d856d877780
+1304	3595	7725418522853212	C:/Unity Project/PiratesMeasurePoki/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6m3y3y4r/obj/arm64-v8a/libswappywrapper.so	9097daaece99c58c
+64	4283	7725418532934519	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	d2def74b795b3c35
+5499	5614	7725418547158697	C:/Unity Project/PiratesMeasurePoki/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6m3y3y4r/obj/arm64-v8a/libgame.so	aa71f371fd781e04
+51	4498	7725418535698457	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	3361545c0ba6ad30
+85	4547	7725418535970911	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	bb09787f2aa79c97
+0	4501	7725418535698457	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	3715d80d1142bfd9
+41	5161	7725418542551201	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	78ad02ca08b81657
+141	1277	7725464878289873	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	6470f011d204d7e
+1278	1666	7725464882041984	C:/Unity Project/PiratesMeasurePoki/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6m3y3y4r/obj/arm64-v8a/libswappywrapper.so	9097daaece99c58c
+114	3127	7725464896783077	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	3361545c0ba6ad30
+42	3152	7725464896949079	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	d2def74b795b3c35
+7	3186	7725464897490728	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	9c9a9d856d877780
+122	3194	7725464897490728	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	bb09787f2aa79c97
+31	3280	7725464898462864	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	3715d80d1142bfd9
+58	3521	7725464900867693	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	78ad02ca08b81657
+131	3664	7725464902326462	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	4c53b7e8a554256
+49	3668	7725464902326462	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	b504f976bf4f0905
+3668	3752	7725464903259156	C:/Unity Project/PiratesMeasurePoki/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6m3y3y4r/obj/arm64-v8a/libgame.so	aa71f371fd781e04
