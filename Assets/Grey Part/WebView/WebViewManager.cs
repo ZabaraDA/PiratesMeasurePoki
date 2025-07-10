@@ -7,30 +7,42 @@ using UnityEngine.SceneManagement;
 
 public class WebViewManager : MonoBehaviour
 {
-    [SerializeField] private string _url;
-    [SerializeField] private GameObject _webViewBackgroundPanel;
-    [SerializeField] private TMP_Text _text;
+    [SerializeField]
+    private int _loadSceneId;
+    [SerializeField] 
+    private string _url;
+    [SerializeField] 
+    private TMP_Text _text;
     private WebViewObject _webView;
+    [SerializeField]
+    private bool _isDebug;
     private bool _isWebViewOpen = false;
-    public static string ExternalIpAddress { get; private set; }
+    private string _externalIpAddress;
+
 
     private void Start()
     {
+       TryLoadWebView();
+    }
+
+    private void TryLoadWebView()
+    {
         try
         {
-            StartCoroutine(GetExternalIpAddress());
+            _text.gameObject.SetActive(_isDebug);
+            if (_isDebug)
+            {
+                StartCoroutine(GetExternalIpAddress());
+            }
             StartCoroutine(CheckUrlBeforeLoad());
         }
-        catch
+        catch (Exception e)
         {
-            _text.text += " Catch! ";
+            WebViewLog(e.Message);
             LoadMainGame();
         }
     }
 
-    /// <summary>
-    /// Отправляет запрос на внешний сервис для получения публичного IP-адреса.
-    /// </summary>
     private IEnumerator GetExternalIpAddress()
     {
         // Используем сервис, который возвращает IP в виде простого текста
@@ -38,26 +50,18 @@ public class WebViewManager : MonoBehaviour
 
         using (UnityWebRequest request = UnityWebRequest.Get(url))
         {
-
-            
             yield return request.SendWebRequest();
 
             if (request.result == UnityWebRequest.Result.Success)
             {
                 // Успешно! Текст ответа - это наш IP
-                ExternalIpAddress = request.downloadHandler.text;
-                _text.text = "Мой внешний IP-адрес: " + ExternalIpAddress;
-                Debug.Log("Мой внешний IP-адрес: " + ExternalIpAddress);
-
-                // Сообщаем всем подписчикам, что IP получен
-                //OnIpAddressResolved?.Invoke(ExternalIpAddress);
+                _externalIpAddress = request.downloadHandler.text;
+                WebViewLog("Внешний IP-адрес: " + _externalIpAddress);
             }
             else
             {
-                // Произошла ошибка
-                Debug.LogError("Не удалось получить внешний IP-адрес. Ошибка: " + request.error);
-                ExternalIpAddress = "Error";
-                //OnIpAddressResolved?.Invoke(null); // Сообщаем об ошибке
+                WebViewLog("Не удалось получить внешний IP-адрес. Ошибка: " + request.error);
+                _externalIpAddress = "Error";
             }
         }
     }
@@ -67,113 +71,36 @@ public class WebViewManager : MonoBehaviour
     {
         using (UnityWebRequest request = UnityWebRequest.Get(_url))
         {
-            request.certificateHandler = new BypassCertificateHandler();
+            //request.certificateHandler = new BypassCertificateHandler();
             request.SetRequestHeader("User-Agent", "Mozilla/5.0 (Linux; Android 10; SM-G975F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Mobile Safari/537.36");
             yield return request.SendWebRequest();
 
             if (request.result == UnityWebRequest.Result.Success)
             {
-                _webViewBackgroundPanel.SetActive(true);
                 LoadWebView();
             }
             else if (request.responseCode == 404)
             {
-                _text.text += "URL недоступен (404), сразу загружаем игру";
-                Debug.Log("URL недоступен (404), сразу загружаем игру");
+                WebViewLog("URL недоступен (404), сразу загружаем игру");
                 LoadMainGame();
             }
             else
             {
-                _text.text += $"Ошибка проверки URL {_url}: {request.error} (Код: {request.responseCode})";
-                Debug.LogError($"Ошибка: {request.error} (Код: {request.responseCode})");
-                // При ошибке все равно загружаем игру
+                WebViewLog($"Ошибка проверки URL {_url}: {request.error} (Код: {request.responseCode})");
                 LoadMainGame();
             }
         }
     }
 
-    //private IEnumerator CheckUrlBeforeLoad()
-    //{
-    //    string currentUrl = _url;
-    //    const int maxRedirects = 10000; // Ограничение, чтобы не уйти в бесконечный цикл
-
-    //    for (int i = 0; i < maxRedirects; i++)
-    //    {
-    //        _text.text += i.ToString();
-    //        using (UnityWebRequest request = UnityWebRequest.Get(currentUrl))
-    //        {
-    //            // Отключаем автоматическое следование редиректам
-    //            request.redirectLimit = 0;
-    //            request.certificateHandler = new BypassCertificateHandler();
-
-    //            yield return request.SendWebRequest();
-
-    //            if (request.responseCode == 404)
-    //            {
-    //                _text.text += "URL недоступен (404), сразу загружаем игру";
-    //                Debug.Log("URL недоступен (404), сразу загружаем игру");
-    //                LoadMainGame();
-    //                yield break;
-    //            }
-
-    //            // Проверяем, является ли ответ редиректом
-    //            if (request.responseCode == 301 || request.responseCode == 302)
-    //            {
-    //                string redirectUrl = request.GetResponseHeader("Location");
-    //                if (string.IsNullOrEmpty(redirectUrl))
-    //                {
-    //                    _text.text += "Сервер вернул редирект, но не указал новый URL.";
-    //                    Debug.LogError("Сервер вернул редирект, но не указал новый URL.");
-    //                    LoadMainGame();
-    //                    yield break; // Выходим из корутины
-    //                }
-
-    //                // ИСПРАВЛЕНО: Обработка относительных URL
-    //                if (!redirectUrl.StartsWith("http"))
-    //                {
-    //                    var originalUri = new System.Uri(currentUrl);
-    //                    redirectUrl = $"{originalUri.Scheme}://{originalUri.Host}{redirectUrl}";
-    //                }
-    //                _text.text += $"Обнаружен редирект на: {redirectUrl}";
-
-    //                Debug.Log($"Обнаружен редирект на: {redirectUrl}");
-    //                currentUrl = redirectUrl; // Обновляем URL для следующей итерации цикла
-    //                continue; // Переходим к следующей итерации для проверки нового URL
-    //            }
-
-    //            // Если это не редирект, обрабатываем как обычно
-    //            if (request.result == UnityWebRequest.Result.Success)
-    //            {
-    //                _text.text += $"Проверка URL {currentUrl} успешна. Загружаем WebView.";
-    //                Debug.Log($"Проверка URL {currentUrl} успешна. Загружаем WebView.");
-    //                _webViewBackgroundPanel.SetActive(true);
-    //                // ВАЖНО: загружать в WebView нужно финальный URL
-    //                LoadWebView(currentUrl);
-    //            }
-    //            else
-    //            {
-    //                _text.text += $"Ошибка проверки URL {currentUrl}: {request.error} (Код: {request.responseCode})";
-    //                Debug.LogError($"Ошибка проверки URL {currentUrl}: {request.error} (Код: {request.responseCode})");
-    //                LoadMainGame();
-    //            }
-    //            yield break; // Выходим из корутины после успешного запроса или ошибки
-    //        }
-    //    }
-    //    _text.text += "Превышено максимальное количество редиректов.";
-    //    Debug.LogError("Превышено максимальное количество редиректов.");
-    //    LoadMainGame();
-    //}
-
-
     private void LoadWebView()
     {
-        _text.text += " \nLoad WebView! \n";
+        WebViewLog("Load WebView!");
 #if UNITY_ANDROID || UNITY_IOS
         _webView = (new GameObject("WebView")).AddComponent<WebViewObject>();
         _webView.Init(
-            cb: (msg) => {
-                _text.text += $"Callback: {msg}";
-               Debug.Log($"Callback: {msg}");
+            cb: (msg) =>
+            {
+                WebViewLog($"Callback: {msg}");
                 // Если пользователь закрыл WebView
                 if (msg == "close" || msg.Contains("error"))
                 {
@@ -181,9 +108,9 @@ public class WebViewManager : MonoBehaviour
                     LoadMainGame();
                 }
             },
-            err: (msg) => {
-                _text.text += $"Error: {msg}";
-                Debug.Log($"Error: {msg}");
+            err: (msg) =>
+            {
+                WebViewLog($"Error: {msg}");
                 CloseWebView();
                 LoadMainGame();
             },
@@ -202,7 +129,7 @@ public class WebViewManager : MonoBehaviour
 
     private void LoadMainGame()
     {
-        _webViewBackgroundPanel.SetActive(false);
+        SceneManager.LoadScene(_loadSceneId);
     }
 
     private void Update()
@@ -216,11 +143,11 @@ public class WebViewManager : MonoBehaviour
                 {
                     _webView.GoBack();
                 }
-                else
-                {
-                    CloseWebView();
-                    LoadMainGame();
-                }
+                //else
+                //{
+                //    CloseWebView();
+                //    LoadMainGame();
+                //}
             }
         }
     }
@@ -239,7 +166,17 @@ public class WebViewManager : MonoBehaviour
     {
         CloseWebView();
     }
+
+    private void WebViewLog(string text)
+    {
+        if (_isDebug)
+        {
+            _text.text += $"\n{text}";
+        }
+        Debug.Log(text);
+    }
 }
+
 
 public class BypassCertificateHandler : CertificateHandler
 {

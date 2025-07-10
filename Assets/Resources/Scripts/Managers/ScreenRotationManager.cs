@@ -36,8 +36,7 @@ public class ScreenRotationScript : MonoBehaviour
         {
             Screen.orientation = ScreenOrientation.Portrait;
         }
-
-        if (_allowLandscapeLeftOrientation || _allowPortraitLandscapeRightOrientation)
+        else if (_allowLandscapeLeftOrientation || _allowPortraitLandscapeRightOrientation)
         {
             Screen.orientation = ScreenOrientation.LandscapeLeft;
         }
